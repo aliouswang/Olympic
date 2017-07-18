@@ -2,6 +2,7 @@ package com.example.aliouswang.olympic;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupRecyclerView() {
         this.mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        this.mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mItemAdapter = new ItemAdapter();
         this.mRecyclerView.setAdapter(mItemAdapter);
     }

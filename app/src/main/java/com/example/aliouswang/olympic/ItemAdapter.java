@@ -1,6 +1,7 @@
 package com.example.aliouswang.olympic;
 
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 /**
@@ -17,16 +18,19 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemViewHolder>{
 
     @Override
     public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return null;
+        return new ItemViewHolder(
+                LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.item_main_layout, parent, false)
+        );
     }
 
     @Override
     public void onBindViewHolder(ItemViewHolder holder, int position) {
-
+        holder.convert(itemData[position], position);
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return itemData.length;
     }
 }
